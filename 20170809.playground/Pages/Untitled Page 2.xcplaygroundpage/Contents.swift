@@ -264,6 +264,34 @@ func addUser(qname userName:String, id userId:String, email userEmail:String){
 
 addUser(qname:"홍길동", id:"hont77", email:"hong77@email")
 
+// 매개변수 명 생략
+func addPerson(_ name:String, _ id:String){
+    let param1 = name
+    let param2 = id
+}
+
+addPerson("홍길동", "hong")
+
+// 가변인자
+func average(user:String, scores:Int...){
+    var tot:Int = 0
+    for score in scores{
+        tot += score
+    }
+    let avg = tot / scores.count
+    print("\(user)님의 평균은 \(avg)점입니다.")
+}
+
+average(user: "hong77", scores: 100, 100 ,300, 100, 90)
+
+// 기본값
+func setNameAndAge(user:String, age:Int = 0){
+    print("\(user)님 나이는 \(age)입니다.")
+}
+
+setNameAndAge(user: "홍길동")
+setNameAndAge(user: "김길동", age: 23)
+
 
 
 
